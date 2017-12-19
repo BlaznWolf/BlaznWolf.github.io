@@ -4,14 +4,14 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 12
-  productGUID: 1d9c0bb6c23a0344b95cbde18f970b36
+  productGUID: 348f687d75cac4a498c37f56f5099993
   AndroidProfiler: 0
   defaultScreenOrientation: 4
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
-  productName: CE2
+  companyName: W
+  productName: The Chase Scene
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -508,14 +508,14 @@ PlayerSettings:
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: CE2
+  metroPackageName: Prototype
   metroPackageVersion: 
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
   metroCertificateIssuer: 
   metroCertificateNotAfter: 0000000000000000
-  metroApplicationDescription: CE2
+  metroApplicationDescription: Prototype
   wsaImages: {}
   metroTileShortName: 
   metroCommandLineArgsFile: 
@@ -586,11 +586,12 @@ PlayerSettings:
     daydream:
       daydreamIconForeground: {fileID: 0}
       daydreamIconBackground: {fileID: 0}
-  cloudServicesEnabled: {}
+  cloudServicesEnabled:
+    UNet: 1
   facebookSdkVersion: 7.9.4
   apiCompatibilityLevel: 2
-  cloudProjectId: 860f4f48-7288-45b7-9054-5e73bc69e056
-  projectName: CE2
+  cloudProjectId: 5c738546-c2d9-46a3-addf-38a4b5f0ca80
+  projectName: Prototype
   organizationId: blazn-wolf
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
