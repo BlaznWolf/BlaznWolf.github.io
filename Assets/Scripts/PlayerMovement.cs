@@ -14,6 +14,11 @@ public class PlayerMovement : MonoBehaviour {
     public bool isGrounded;
     Rigidbody rb;
 
+    public float speed = 1; // speed in meters per second
+
+    public AudioClip jumpsfx;
+    public AudioClip cutsfx;
+    private AudioSource source;
 
     // Use this for initialization
     void Start () {
@@ -23,6 +28,32 @@ public class PlayerMovement : MonoBehaviour {
 
     }
 
+    void Awake()
+    {
+
+        source = GetComponent<AudioSource>();
+
+    }
+
+    private void OnCollisionEnter(Collision collide)
+	{
+		if (collide.gameObject.tag == "obstacle")
+		{
+            Invoke("ChangeLevel", 0.3f); //delays respawn for "cut" sfx
+
+            source.PlayOneShot(cutsfx);
+        }
+
+        if (collide.gameObject.tag == "end")
+        {
+            Application.LoadLevel("stagev");
+        }
+    }
+
+    void ChangeLevel()
+    {
+        Application.LoadLevel("stage1");
+    }
 
     void OnCollisionStay()
     {
@@ -46,7 +77,21 @@ public class PlayerMovement : MonoBehaviour {
 
             rb.AddForce(jump * jumpForce, ForceMode.Impulse);
             isGrounded = false;
+
+            source.PlayOneShot(jumpsfx);
         }
+	    
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+
+
+        Vector3 moveDir = Vector3.zero;
+       // moveDir.x = Input.GetAxis("Horizontal"); // get result of AD keys in X
+        moveDir.z = Input.GetAxis("Vertical"); // get result of WS keys in Z
+                                               // move this object at frame rate independent speed:
+        transform.position += moveDir * speed * Time.deltaTime;
 
     }
 }
